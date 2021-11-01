@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+body, html {
+    background: #111;
+    color: #fff;
+    font-family: 'Amatic SC', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+svg {
+    /* absolute positioning takes svg out of flow of the document, it is positioned relative to it's closest parent with 'relative' or 'absolute' positioning, in this case the body */
+    position: absolute;
+    /* setting this makes it so that the svg won't eat up any clicks meant for elements underneath it */
+    pointer-events: none;
+    
+    /* you can use these offsets to change where exactly the svg is positioned */
+    top: 0;
+    left: 0;
+  }
+
+  main{
+      text-align: center;
+      position: relative;
+  }
