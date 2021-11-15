@@ -11,22 +11,45 @@ import {
 
 export const fader = 
     trigger ('routeAnimations' , [
-        transition('* <=> *', [
-            query(':enter, :leave', [
-                style({
-                    position: 'absolute',
-                    left: 0,
-                    width: '100%',
-                    opacity: 0,
-                    transform: 'scale(0) translateY(10%)'
-                }),
-            ]),
-            query(':enter', [
-                animate('3000ms ease', 
-                    style({ opacity: 1, transform: 'scale(1)'})),
-            ])
-        ]),
+        transition('* => normal', normal()),
+        transition('* => longer', longer()),
     ]);
+
+function longer(){
+    return [
+        query(':enter, :leave', [
+            style({
+                position: 'absolute',
+                left: 0,
+                width: '100%',
+                opacity: 0,
+                transform: 'scale(0) translateY(10%)'
+            }),
+        ]),
+        query(':enter', [
+            animate('15000ms ease', 
+                style({ opacity: 1, transform: 'scale(1)'})),
+        ])
+    ]
+}
+
+function normal(){
+    return [
+        query(':enter, :leave', [
+            style({
+                position: 'absolute',
+                left: 0,
+                width: '100%',
+                opacity: 0,
+                transform: 'scale(0) translateY(10%)'
+            }),
+        ]),
+        query(':enter', [
+            animate('3000ms ease', 
+                style({ opacity: 1, transform: 'scale(1)'})),
+        ])
+    ]
+}
 
 
 // export const slider =

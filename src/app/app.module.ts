@@ -8,13 +8,17 @@ import { QuizComponent } from './secret/quiz/quiz.component';
 import { IntroductionComponent } from './secret/introduction/introduction.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EndComponent } from './secret/end/end.component';
+import { CongratsComponent } from './secret/congrats/congrats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     QuizComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    EndComponent,
+    CongratsComponent
   ],
   imports: [
     BrowserModule,
